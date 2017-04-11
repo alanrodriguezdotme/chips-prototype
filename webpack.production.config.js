@@ -8,7 +8,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 	devtool: 'source-map',
 
 	entry: './src/App.tsx',
-
+	
 	output: {
 		path: path.join(__dirname, 'build'),
 		filename: 'app.bundle.js',
@@ -16,56 +16,60 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 	},
 
 	resolve: {
-		extensions: ['', '.js', '.jsx', '.ts', '.tsx', '.css',  '.scss'],
-		modulesDirectories: ['node_modules', 'typings'],
-		alias: {
-			$: 'jquery/src/jquery',
-			_: 'underscore'
-		}
-	},
-
-	externals: {
-		"jquery": "jQuery",
-		"$": "$",
-		_: "underscore"
+		extensions: [
+			'.js',
+			'.jsx',
+			'.ts',
+			'.tsx',
+			'.css',
+			'.scss'
+		],
+		modules: [
+			path.join(__dirname, "src"),
+			"typings",
+			"node_modules"
+		]
 	},
 
 	module: {
-		loaders: [
-			{ 
+		rules: [
+			{
 				test: /\.(js|jsx)$/,
-				exclude: [/node_modules/, /typings/],
-				loader: 'babel-loader'
+				use: [{
+					loader: 'babel-loader'
+				}]
 			},
-			{ 
+			{
 				test: /\.tsx?$/,
-				exclude: [/node_modules/, /typings/],
-				loader: 'ts-loader'
+				use: [{
+					loader: 'ts-loader'
+				}]
 			},
 			{
-				test: /\.scss$/,
-				exclude: [/node_modules/, /typings/], 
-				loader: ExtractTextPlugin.extract('style','css!sass')
+				test: /\.(css|scss)$/,
+				use: [
+					{ loader: "style-loader" },
+					{ loader: "css-loader" },
+					{ loader: "sass-loader" }
+				]
 			},
 			{
-				test: /\.css$/,
-				exclude: [/node_modules/, /typings/],
-				loader: ExtractTextPlugin.extract('style','css')
-			},
-			{ 
 				test: /\.jpg/,
-				exclude: [/node_modules/, /typings/], 
-				loader: "file-loader" 
+				use: [{
+					loader: "file-loader"
+				}]
 			},
-			{ 
+			{
 				test: /\.png/,
-				exclude: [/node_modules/, /typings/], 
-				loader: "url-loader?mimetype=image/png"
+				use: [{
+					loader: "url-loader" //"url-loader?mimetype=image/png"
+				}]
 			},
 			{
 				test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-				loader: 'file-loader?name=[name].[ext]',
-				exclude: [/node_modules/, /typings/], 
+				use: [{
+					loader: "file-loader" //loader: 'file-loader?name=[name].[ext]',
+				}]
 			}
 		]
 	},
@@ -74,4 +78,5 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 		new WebpackNotifierPlugin({ alwaysNotify: true }),
 		new ExtractTextPlugin("styles.css")
 	]
+
  }

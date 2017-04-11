@@ -20,18 +20,19 @@ module.exports = {
 	},
 
 	resolve: {
-		extensions: ['', '.js', '.jsx', '.ts', '.tsx', '.css',  '.scss'],
-		modulesDirectories: ['node_modules', 'typings'],
-		alias: {
-			$: 'jquery/src/jquery',
-			_: 'underscore'
-		}
-	},
-
-	externals: {
-		"jquery": "jQuery",
-		"$": "$",
-		_: "underscore"
+		extensions: [
+			'.js',
+			'.jsx',
+			'.ts',
+			'.tsx',
+			'.css',
+			'.scss'
+		],
+		modules: [
+			path.join(__dirname, "src"),
+			"typings",
+			"node_modules"
+		]
 	},
 
 	devServer: {
@@ -40,41 +41,50 @@ module.exports = {
 	},
 
 	module: {
-		loaders: [
-			{ 
+		rules: [
+			{
 				test: /\.(js|jsx)$/,
-				exclude: [/node_modules/, /typings/],
-				loader: 'babel-loader'
+				use: [{
+					loader: 'babel-loader'
+				}]
 			},
-			{ 
+			{
 				test: /\.tsx?$/,
-				exclude: [/node_modules/, /typings/],
-				loader: 'ts-loader'
+				use: [{
+					loader: 'ts-loader'
+				}]
 			},
-			{ 
-				test: /\.scss$/,
-				exclude: [/node_modules/, /typings/],
-				loaders: ['style', 'css', 'sass']
+			{
+				test: /\.(css|scss)$/,
+				use: [
+					{ loader: "style-loader" },
+					{ loader: "css-loader" },
+					{ loader: "sass-loader" }
+				]
 			},
-			{ 
-				test: /\.css$/,
-				exclude: [/node_modules/, /typings/],
-				loader: 'style-loader!css-loader'
+			{
+				test: /\.svg$/,
+				use: [{
+					loader: "raw-loader"
+				}]
 			},
-			{ 
+			{
 				test: /\.jpg/,
-				loader: "file-loader",
-				exclude: [/node_modules/, /typings/]
+				use: [{
+					loader: "file-loader"
+				}]
 			},
-			{ 
+			{
 				test: /\.png/,
-				loader: "url-loader?mimetype=image/png",
-				exclude: [/node_modules/, /typings/]
+				use: [{
+					loader: "url-loader" //"url-loader?mimetype=image/png"
+				}]
 			},
-			{ 
-				test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-				loader: 'file-loader?name=[name].[ext]',
-				exclude: [/node_modules/, /typings/]
+			{
+				test: /\.(ttf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+				use: [{
+					loader: "file-loader?name=[name].[ext]"
+				}]
 			}
 		]
 	},
@@ -83,4 +93,5 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new WebpackNotifierPlugin({ alwaysNotify: true })
 	]
+
 }

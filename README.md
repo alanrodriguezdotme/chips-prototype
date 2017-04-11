@@ -17,9 +17,8 @@ A simple React Boilerplate to facilitate quick prototyping or code exploration.
 
 ## Installation
 
-1. git clone repo  
-2. npm install  
-3. typings install
+1. git clone repo
+2. npm install
 
 ## NPM Scripts
 
