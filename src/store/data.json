@@ -1,0 +1,58 @@
+[
+	{
+		"image": "1.jpg",
+		"mileage": 12345,
+		"make": "chrysler",
+		"model": "200",
+		"year": 2015
+	},
+	{
+		"image": "2.jpg",
+		"mileage": 12345,
+		"make": "ford",
+		"model": "",
+		"year": null
+	},
+	{
+		"image": "3.jpg",
+		"mileage": 12345,
+		"make": "",
+		"model": "",
+		"year": null
+	},
+	{
+		"image": "4.jpg",
+		"mileage": 12345,
+		"make": "",
+		"model": "",
+		"year": null
+	},
+	{
+		"image": "5.jpg",
+		"mileage": 12345,
+		"make": "",
+		"model": "",
+		"year": null
+	},
+	{
+		"image": "6.jpg",
+		"mileage": 12345,
+		"make": "",
+		"model": "",
+		"year": null
+	},
+	{
+		"image": "7.jpg",
+		"mileage": 12345,
+		"make": "",
+		"model": "",
+		"year": null
+	},
+	{
+		"image": "8.jpg",
+		"mileage": 12345,
+		"make": "",
+		"model": "",
+		"year": null
+	}
+]
