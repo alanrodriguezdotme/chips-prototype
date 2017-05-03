@@ -15,7 +15,6 @@ import store from '../../store/Store';
 	}
 
 	render() {
-		console.log(store.query, store.currentCategory);
 		return (
 			<div className="main">
 				<Header store={store} />

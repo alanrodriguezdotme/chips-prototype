@@ -11,6 +11,25 @@ let data = require('../../store/data.json');
 	constructor(props) {
 		super(props);
 		require('./Grid.scss');
+
+		this.state = {
+			activeChipsShowing: false
+		}
+	}
+
+	componentDidUpdate() {
+		let { chips } = this.props.store;
+
+		for (let i = 0; i < chips.length; i++) {
+			if (chips[i].active) {
+				this.props.store.activeChipsShowing = true;
+				// this.setState({ activeChipsShowing: true });
+				break;
+			} else {
+				this.props.store.activeChipsShowing = false;
+				// this.setState({ activeChipsShowing: false });
+			}
+		}
 	}
 
 	renderResults() {
@@ -70,7 +89,8 @@ let data = require('../../store/data.json');
 	render() {
 		let gridClasses = classNames({
 			'grid': true,
-			'chips-showing': this.props.store.currentCategory != null
+			'chips-showing': this.props.store.currentCategory != null,
+			'active-chips-showing': this.props.store.activeChipsShowing
 		})
 
 		return (

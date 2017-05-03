@@ -1,14 +1,41 @@
+@import '../Global.scss';
+
 .chips {
 	position: fixed;
-	top: 50px;
-	background: lightblue;
+	top: 60px;
+	background: $lightest;
 	width: 100%;
 }
 
 .chips-current, .chips-active {
 	display: flex;
+	align-items: center;
+	padding: 0 12px;
+}
+
+.chips-current {
+	height: 36px;
 }
 
 .chips-active {
-	max-height: 25px;
+	max-height: 36px;
+
+	.chip {
+		background: $white;
+		color: $primary;
+	}
+}
+
+.chip {
+	padding: 3px 6px;
+	margin: 6px 6px 6px 0;
+	border-radius: 6px;
+	background: $primary;
+	color: $white;
+	font-size: 12px;
+	font-weight: 700;
+
+	i {
+		margin-right: 3px;
+	}
 }

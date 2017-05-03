@@ -1,9 +1,8 @@
 import { observable } from 'mobx';
 
 let store = observable({
-	query: '',
+	activeChipsShowing: false,
 	currentCategory: null,
-	currentChips: [],
 	currentResults: null,
 	chips: [
 		{
@@ -24,7 +23,8 @@ let store = observable({
 			categories: ["cars", "automobiles", "vehicles"],
 			active: false
 		}
-	]
+	],
+	query: ''
 });
 
 export default store;

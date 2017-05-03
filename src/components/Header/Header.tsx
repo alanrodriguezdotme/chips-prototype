@@ -39,7 +39,7 @@ let data = require('../../store/data.json');
 	render() {
 		return (
 			<header className="header">
-				<input className="header-search" ref="query" type="text" placeholder="Search for a car" onChange={this.onSearchChange.bind(this)} />
+				<input className="header-search" ref="query" type="text" placeholder="Search..." onChange={this.onSearchChange.bind(this)} />
 			</header>
 		);
 	}

@@ -5,7 +5,7 @@ import store from '../../store/Store';
 
 @observer class Chip extends React.Component<any, any>{
 
-	handleClick() {		
+	handleClick() {
 		this.props.chip.active = !this.props.chip.active;
 	}
 
@@ -14,7 +14,7 @@ import store from '../../store/Store';
 
 		return (
 			<div className="chip" onClick={() => this.handleClick()}>
-				{ active ? <span>X</span> : null }
+				{ active ? <i className="fa fa-close" /> : null }
 				<label>{label}</label>
 			</div>
 		);
