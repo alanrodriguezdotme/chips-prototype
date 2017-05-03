@@ -1,8 +1,6 @@
 import * as React from "react";
 import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
-import { observable } from 'mobx';
-import { observer } from 'mobx-react';
 
 import Main from './components/Main/Main';
 

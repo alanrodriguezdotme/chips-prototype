@@ -2,7 +2,10 @@ import * as React from "react";
 import { observer } from 'mobx-react';
 
 import Header from '../Header/Header';
+import Chips from '../Chips/Chips';
 import Grid from '../Grid/Grid';
+
+import store from '../../store/Store';
 
 @observer class Main extends React.Component<any, any>{
 
@@ -12,10 +15,12 @@ import Grid from '../Grid/Grid';
 	}
 
 	render() {
+		console.log(store.query, store.currentCategory);
 		return (
 			<div className="main">
-				<Header />
-				<Grid />
+				<Header store={store} />
+				{ store.currentCategory != null && <Chips store={store} /> }
+				<Grid store={store} />
 			</div>
 		)
 	}

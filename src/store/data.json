@@ -1,57 +1,73 @@
 [
 	{
 		"image": "1.jpg",
+		"categories": ["cars", "automobiles"],
 		"mileage": 12345,
-		"make": "chrysler",
+		"brand": "Chrysler",
 		"model": "200",
 		"year": 2015
 	},
 	{
 		"image": "2.jpg",
+		"categories": ["cars", "automobiles"],
 		"mileage": 12345,
-		"make": "ford",
-		"model": "",
+		"brand": "Ford",
+		"model": "Explorer",
 		"year": null
 	},
 	{
 		"image": "3.jpg",
-		"mileage": 12345,
-		"make": "",
+		"categories": ["cars", "automobiles"],
+		"mileage": 100000,
+		"brand": "",
 		"model": "",
 		"year": null
 	},
 	{
 		"image": "4.jpg",
-		"mileage": 12345,
-		"make": "",
+		"categories": ["cars", "automobiles"],
+		"mileage": 75001,
+		"brand": "",
 		"model": "",
 		"year": null
 	},
 	{
 		"image": "5.jpg",
+		"categories": ["cars", "automobiles"],
 		"mileage": 12345,
-		"make": "",
+		"brand": "",
 		"model": "",
 		"year": null
 	},
 	{
 		"image": "6.jpg",
+		"categories": ["cars", "automobiles"],
 		"mileage": 12345,
-		"make": "",
+		"brand": "",
 		"model": "",
 		"year": null
 	},
 	{
 		"image": "7.jpg",
+		"categories": ["cars", "automobiles"],
 		"mileage": 12345,
-		"make": "",
+		"brand": "",
 		"model": "",
 		"year": null
 	},
 	{
 		"image": "8.jpg",
+		"categories": ["cars", "automobiles"],
 		"mileage": 12345,
-		"make": "",
+		"brand": "",
+		"model": "",
+		"year": null
+	},
+	{
+		"image": "9.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 760000,
+		"brand": "",
 		"model": "",
 		"year": null
 	}

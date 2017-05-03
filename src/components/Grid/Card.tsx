@@ -10,11 +10,12 @@ import { observer } from 'mobx-react';
 
 	render() {
 		let { image } = this.props.item;
+		let cardStyle = {
+			backgroundImage: 'url(/src/images/' + image + ')'
+		}
 
 		return (
-			<div className="card" key={image}>
-				<img src={'/src/images/' + image} />
-			</div>
+			<div className="card" style={cardStyle}></div>
 		);
 	}
 }
