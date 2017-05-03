@@ -3,11 +3,52 @@ import { observer } from 'mobx-react';
 
 import Chip from './Chip';
 import store from '../../store/Store';
+let data = require('../../store/data.json');
 
 @observer class Chips extends React.Component<any, any>{
 	constructor(props) {
 		super(props);
 		require('./Chips.scss');
+	}
+
+	componentDidUpdate() {
+		this.filterResults();
+	}
+
+	filterResults() {
+		let { chips, results } = this.props.store;
+		let activeChips = [];
+		let activeFilters;
+		let filteredResults = [];
+
+		chips.forEach((chip) => {
+			if (chip.active) {
+				activeChips.push(chip);
+				this.props.store.activeChipsShowing = true;
+			}
+		});
+
+		if (activeChips.length > 0) {
+			activeChips.forEach((chip, index) => {
+				if (index == 0) {
+					activeFilters = chip.filter;
+				} else {
+					activeFilters += ' && ' + chip.filter;
+				}
+			});
+			
+			data.forEach((item) => {
+				if (eval(activeFilters)) {
+					filteredResults.push(item);
+				}
+			});
+
+			this.props.store.results = filteredResults;
+
+		} else {
+			this.props.store.results = data;
+			this.props.store.activeChipsShowing = false;
+		}
 	}
 
 	renderCurrentChips() {

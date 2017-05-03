@@ -3,5 +3,9 @@
 	height: calc(33vw - 16px);
 	background-size: cover;
 	background-position: 50% 50%;
-	margin-bottom: 15px;
+	margin: 0 12px 12px 0;
+
+	&:nth-child(3n) {
+		margin: 0 0 12px 0;
+	}
 }

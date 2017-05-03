@@ -1,9 +1,9 @@
 import { observable } from 'mobx';
+let data = require('./data.json');
 
 let store = observable({
 	activeChipsShowing: false,
 	currentCategory: null,
-	currentResults: null,
 	chips: [
 		{
 			label: "< 75k",
@@ -12,8 +12,20 @@ let store = observable({
 			active: false
 		},
 		{
-			label: "Ford",
-			filter: "item.brand == 'Ford'",
+			label: "Sedans",
+			filter: "item.type == 'sedan'",
+			categories: ["cars", "automobiles", "vehicles"],
+			active: false
+		},
+		{
+			label: "Nissan",
+			filter: "item.brand == 'Nissan'",
+			categories: ["cars", "automobiles", "vehicles"],
+			active: false
+		},
+		{
+			label: "Black",
+			filter: "item.color == 'black'",
 			categories: ["cars", "automobiles", "vehicles"],
 			active: false
 		},
@@ -22,9 +34,22 @@ let store = observable({
 			filter: "item.brand == 'Chrysler'",
 			categories: ["cars", "automobiles", "vehicles"],
 			active: false
+		},
+		{
+			label: "Trucks",
+			filter: "item.type == 'truck'",
+			categories: ["cars", "automobiles", "vehicles"],
+			active: false
+		},
+		{
+			label: "Gray/Silver",
+			filter: "item.color == 'gray'",
+			categories: ["cars", "automobiles", "vehicles"],
+			active: false
 		}
 	],
-	query: ''
+	query: '',
+	results: data
 });
 
 export default store;

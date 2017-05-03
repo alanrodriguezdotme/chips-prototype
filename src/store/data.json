@@ -5,7 +5,9 @@
 		"mileage": 12345,
 		"brand": "Chrysler",
 		"model": "200",
-		"year": 2015
+		"year": 2015,
+		"color": "black",
+		"type": "sedan"
 	},
 	{
 		"image": "2.jpg",
@@ -13,62 +15,188 @@
 		"mileage": 12345,
 		"brand": "Ford",
 		"model": "Explorer",
-		"year": null
+		"year": 2002,
+		"color": "gray",
+		"type": "suv"
 	},
 	{
 		"image": "3.jpg",
 		"categories": ["cars", "automobiles"],
 		"mileage": 100000,
-		"brand": "",
-		"model": "",
-		"year": null
+		"brand": "Nissan",
+		"model": "D21",
+		"year": 1986,
+		"color": "blue",
+		"type": "truck"
 	},
 	{
 		"image": "4.jpg",
 		"categories": ["cars", "automobiles"],
 		"mileage": 75001,
-		"brand": "",
-		"model": "",
-		"year": null
+		"brand": "Nissan",
+		"model": "Altima",
+		"year": 2002,
+		"color": "gray",
+		"type": "sedan"
 	},
 	{
 		"image": "5.jpg",
 		"categories": ["cars", "automobiles"],
 		"mileage": 12345,
-		"brand": "",
-		"model": "",
-		"year": null
+		"brand": "Toyota",
+		"model": "Tercel",
+		"year": 1992,
+		"color": "green",
+		"type": "coupe"
 	},
 	{
 		"image": "6.jpg",
 		"categories": ["cars", "automobiles"],
 		"mileage": 12345,
-		"brand": "",
-		"model": "",
-		"year": null
+		"brand": "Chrysler",
+		"model": "Sebring",
+		"year": 2007,
+		"color": "white",
+		"type": "sedan"
 	},
 	{
 		"image": "7.jpg",
 		"categories": ["cars", "automobiles"],
 		"mileage": 12345,
-		"brand": "",
-		"model": "",
-		"year": null
+		"brand": "Volkswagen",
+		"model": "Beetle",
+		"year": 2002,
+		"color": "blue",
+		"type": "coupe"
 	},
 	{
 		"image": "8.jpg",
 		"categories": ["cars", "automobiles"],
 		"mileage": 12345,
-		"brand": "",
-		"model": "",
-		"year": null
+		"brand": "Toyota",
+		"model": "Corolla",
+		"year": 2014,
+		"color": "tan",
+		"type": "coupe"
 	},
 	{
 		"image": "9.jpg",
 		"categories": ["cars", "automobiles"],
 		"mileage": 760000,
-		"brand": "",
-		"model": "",
-		"year": null
+		"brand": "Ford",
+		"model": "Freestar",
+		"year": null,
+		"color": "tan",
+		"type": "minivan"
+	},
+	{
+		"image": "10.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "Chrylser",
+		"model": "Town & Country",
+		"year": 2004,
+		"color": "green",
+		"type": "minivan"
+	},
+	{
+		"image": "11.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "BMW",
+		"model": "X5",
+		"year": 2004,
+		"color": "white",
+		"type": "suv"
+	},
+	{
+		"image": "12.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "Ford",
+		"model": "Taurus",
+		"year": 2001,
+		"color": "gray",
+		"type": "sedan"
+	},
+	{
+		"image": "13.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "Nissan",
+		"model": "Maxima",
+		"year": 2004,
+		"color": "gray",
+		"type": "sedan"
+	},
+	{
+		"image": "14.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "Honda",
+		"model": "Accord",
+		"year": 1996,
+		"color": "gray",
+		"type": "sedan"
+	},
+	{
+		"image": "15.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "Audi",
+		"model": "A4",
+		"year": 1997,
+		"color": "blue",
+		"type": "sedan"
+	},
+	{
+		"image": "16.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "Subaru",
+		"model": "GL",
+		"year": 1988,
+		"color": "blue",
+		"type": "hatchback"
+	},
+	{
+		"image": "17.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "Audi",
+		"model": "A4 Quattro",
+		"year": 2009,
+		"color": "gray",
+		"type": "sedan"
+	},
+	{
+		"image": "18.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "Ford",
+		"model": "Taurus",
+		"year": 2007,
+		"color": "white",
+		"type": "sedan"
+	},
+	{
+		"image": "19.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "Mazda",
+		"model": "3",
+		"year": 2007,
+		"color": "black",
+		"type": "sedan"
+	},
+	{
+		"image": "20.jpg",
+		"categories": ["cars", "automobiles"],
+		"mileage": 12345,
+		"brand": "Toyota",
+		"model": "Tundra",
+		"year": 2005,
+		"color": "blue",
+		"type": "truck"
 	}
 ]
