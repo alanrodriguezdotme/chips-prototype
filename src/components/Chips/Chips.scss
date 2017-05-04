@@ -3,32 +3,38 @@
 .chips {
 	position: fixed;
 	top: 60px;
-	background: $lightest;
 	width: 100%;
 }
 
-.chips-current, .chips-active {
+.chips-current, .chips-active, {
 	display: flex;
 	align-items: center;
 	padding: 0 12px;
 	overflow-x: auto;
+
+	span {
+		display: flex;
+	}
 }
 
 .chips-current {
 	height: 36px;
+	background: $lightest;
 }
 
 .chips-active {
 	max-height: 36px;
+	background: $white;
 
 	.chip {
 		background: $white;
 		color: $primary;
+		border: 1px solid $primary;
 	}
 }
 
 .chip {
-	padding: 3px 6px;
+	padding: 1px 8px;
 	margin: 6px 6px 6px 0;
 	border-radius: 6px;
 	background: $primary;
@@ -40,4 +46,78 @@
 	i {
 		margin-right: 3px;
 	}
+}
+
+.chip-animate-enter {
+  opacity: 0.01;
+	transform: scale(0.8);
+}
+
+.chip-animate-enter.chip-animate-enter-active {
+  opacity: 1;
+	transform: scale(1);
+  transition: all 250ms ease-in-out;
+	transition-property: opacity, transform;
+}
+
+.chip-animate-leave {
+  opacity: 1;
+	transform: scale(1);
+}
+
+.chip-animate-leave.chip-animate-leave-active {
+  opacity: 0.01;
+	transform: scale(0.8);
+  transition: all 250ms ease-in-out;
+	transition-property: opacity, transform;
+}
+
+.chip-appear {
+  opacity: 0.01;
+	transform: scale(0.8);
+}
+
+.chip-appear.chip-appear-active {
+  opacity: 1;
+	transform: scale(1);
+  transition: all 250ms ease-in-out;
+	transition-property: opacity, transform;
+}
+
+
+
+.chips-animate-enter {
+	opacity: 0.01;
+  transform: translateY(-18px);
+}
+
+.chips-animate-enter.chips-animate-enter-active {
+	opacity: 1;
+  transform: translateY(0);
+  transition: all 350ms ease-in-out;
+	transition-property: opacity, transform;
+}
+
+.chips-animate-leave {
+	opacity: 1;
+  transform: translateY(0);
+}
+
+.chips-animate-leave.chips-animate-leave-active {
+	opacity: 0.01;
+  transform: translateY(-18px);
+  transition: all 350ms ease-in-out;
+	transition-property: opacity, transform;
+}
+
+.chips-appear {
+	opacity: 0.01;
+  transform: translateY(-18px);
+}
+
+.chips-appear.chip-appear-active {
+	opacity: 1;
+  transform: translateY(0);
+  transition: all 350ms ease-in-out;
+	transition-property: opacity, transform;
 }

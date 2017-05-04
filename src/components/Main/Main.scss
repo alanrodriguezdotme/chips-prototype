@@ -6,6 +6,13 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-family: $font-family;
+	font-size: 15px;
+	line-height: 22px;
+}
+
+span, div {
+	padding: 0;
+	margin: 0;
 }
 
 * {

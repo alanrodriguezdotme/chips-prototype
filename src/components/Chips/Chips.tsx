@@ -1,5 +1,6 @@
 import * as React from "react";
 import { observer } from 'mobx-react';
+let CSSTransitionGroup = require('react-transition-group/CSSTransitionGroup');
 
 import Chip from './Chip';
 import store from '../../store/Store';
@@ -43,6 +44,10 @@ let data = require('../../store/data.json');
 				}
 			});
 
+			if (filteredResults.length == 0) {
+				this.props.store.results = null;
+			}
+
 			this.props.store.results = filteredResults;
 
 		} else {
@@ -72,8 +77,24 @@ let data = require('../../store/data.json');
 	render() {
 		return (
 			<div className="chips">
-				<div className="chips-current">{this.renderCurrentChips()}</div>
-				<div className="chips-active">{this.renderActiveChips()}</div>
+				<div className="chips-current">
+					<CSSTransitionGroup
+						transitionName="chip-animate"
+						transitionEnterTimeout={350}
+						transitionLeaveTimeout={350}>
+						{this.renderCurrentChips()}
+					</CSSTransitionGroup>
+				</div>
+				<div className="chips-active" key="1">
+					<CSSTransitionGroup
+						transitionName="chip-animate"
+						transitionAppear={true}
+						transitionAppearTimeout={350}
+						transitionEnterTimeout={350}
+						transitionLeaveTimeout={350}>
+						{this.renderActiveChips()}
+					</CSSTransitionGroup>
+				</div>
 			</div>
 		);
 	}

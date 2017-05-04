@@ -21,17 +21,19 @@ let data = require('../../store/data.json');
 		];
 
 		for (let i = 0; i < categories.length; i++) {
-			if (value == categories[i]) {
+			if (value.toLowerCase() == categories[i]) {
 				this.props.store.currentCategory = categories[i];
 				break;
 			} else {
 				this.props.store.currentCategory = null;
+				this.props.store.activeChipsShowing = false;
 			}
 		}
 	}
 
-	updateResults(value) {
+	updateResults(query) {
 		let results = [];
+		let value = query.toLowerCase();
 		
 		if (value.length == 0) {
 			this.props.store.results = data;
@@ -41,11 +43,7 @@ let data = require('../../store/data.json');
 				let model = item.model.toLowerCase();
 				let color = item.color.toLowerCase();
 				let type = item.type.toLowerCase();
-				let { currentCategory, chips } = this.props.store;
-
-				if (value.length == 0) {
-					return item;
-				}
+				let { chips } = this.props.store;
 
 				if (
 					brand.indexOf(value) > -1 ||
@@ -61,8 +59,9 @@ let data = require('../../store/data.json');
 						return item;
 					}
 				}
-				console.log(this.props.store.results, results);
+
 			});
+
 			this.props.store.results = results;
 		}
 
@@ -75,10 +74,17 @@ let data = require('../../store/data.json');
 		this.updateResults(value);
 	}
 
+	handleKeyPress(event) {
+		if (event.key == 'Enter') {
+			console.log(this.props.store.query);
+			this.updateResults(this.props.store.query);
+		}
+	}
+
 	render() {
 		return (
 			<header className="header">
-				<input className="header-search" ref="query" type="text" placeholder="Search..." onChange={this.onSearchChange.bind(this)} />
+				<input className="header-search" ref="query" type="text" placeholder="Search..." onChange={this.onSearchChange.bind(this)} onKeyPress={this.handleKeyPress.bind(this)} />
 			</header>
 		);
 	}

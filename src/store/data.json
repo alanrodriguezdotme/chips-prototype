@@ -198,5 +198,85 @@
 		"year": 2005,
 		"color": "blue",
 		"type": "truck"
+	},
+	{
+		"image": "56.jpg",
+		"categories": ["sneakers", "shoes"],
+		"mileage": null,
+		"brand": "Adidas",
+		"model": "NMD",
+		"year": 2016,
+		"color": "blue",
+		"type": ""
+	},
+	{
+		"image": "57.jpg",
+		"categories": ["sneakers", "shoes"],
+		"mileage": null,
+		"brand": "Nike",
+		"model": "Galaxy",
+		"year": 2016,
+		"color": "black",
+		"type": ""
+	},
+	{
+		"image": "58.jpg",
+		"categories": ["sneakers", "shoes"],
+		"mileage": null,
+		"brand": "Nike",
+		"model": "Red Meat Jordan I",
+		"year": 2015,
+		"color": "red",
+		"type": ""
+	},
+	{
+		"image": "59.jpg",
+		"categories": ["sneakers", "shoes"],
+		"mileage": null,
+		"brand": "Nike",
+		"model": "Supreme Jordans",
+		"year": 2014,
+		"color": "gold",
+		"type": ""
+	},
+	{
+		"image": "60.jpg",
+		"categories": ["sneakers", "shoes"],
+		"mileage": null,
+		"brand": "Adidas",
+		"model": "Yeezy Boost 350",
+		"year": 2015,
+		"color": "white",
+		"type": ""
+	},
+	{
+		"image": "61.jpg",
+		"categories": ["sneakers", "shoes"],
+		"mileage": null,
+		"brand": "Adidas",
+		"model": "Something",
+		"year": 2016,
+		"color": "gray",
+		"type": ""
+	},
+	{
+		"image": "62.jpg",
+		"categories": ["sneakers", "shoes"],
+		"mileage": null,
+		"brand": "Adidas",
+		"model": "Other thing",
+		"year": 2013,
+		"color": "gray",
+		"type": ""
+	},
+	{
+		"image": "63.jpg",
+		"categories": ["sneakers", "shoes"],
+		"mileage": null,
+		"brand": "Chanel",
+		"model": "Ugly shoes",
+		"year": 2012,
+		"color": "white",
+		"type": ""
 	}
 ]

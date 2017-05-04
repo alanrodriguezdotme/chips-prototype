@@ -1,7 +1,14 @@
+@import '../Global.scss';
+
 .grid {
 	padding: 72px 12px 12px 12px;
 	display: flex;
 	flex-wrap: wrap;
+
+	span {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
 	&.chips-showing {
 		padding-top: 105px;
@@ -10,4 +17,47 @@
 	&.active-chips-showing {
 		padding-top: 141px;
 	}
+}
+
+.grid-empty {
+	text-align: center;
+	padding-top: 100px;
+	color: $gray;
+}
+
+
+.chips-animate-enter {
+	opacity: 0.01;
+  transform: translateY(-18px);
+}
+
+.chips-animate-enter.chips-animate-enter-active {
+	opacity: 1;
+  transform: translateY(0);
+  transition: all 350ms ease-in-out;
+	transition-property: opacity, transform;
+}
+
+.chips-animate-leave {
+	opacity: 1;
+  transform: translateY(0);
+}
+
+.chips-animate-leave.chips-animate-leave-active {
+	opacity: 0.01;
+  transform: translateY(-18px);
+  transition: all 350ms ease-in-out;
+	transition-property: opacity, transform;
+}
+
+.chips-appear {
+	opacity: 0.01;
+  transform: translateY(-18px);
+}
+
+.chips-appear.chip-appear-active {
+	opacity: 1;
+  transform: translateY(0);
+  transition: all 350ms ease-in-out;
+	transition-property: opacity, transform;
 }
