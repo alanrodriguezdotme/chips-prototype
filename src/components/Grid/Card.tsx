@@ -11,7 +11,7 @@ import { observer } from 'mobx-react';
 	render() {
 		let { image } = this.props.item;
 		let cardStyle = {
-			backgroundImage: 'url(/src/images/' + image + ')'
+			backgroundImage: 'url(src/images/' + image + ')'
 		}
 
 		return (

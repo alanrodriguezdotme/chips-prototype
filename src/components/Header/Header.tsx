@@ -33,7 +33,10 @@ let data = require('../../store/data.json');
 	updateResults(value) {
 		let results = [];
 		
-			data.map((item, index) => {
+		if (value.length == 0) {
+			this.props.store.results = data;
+		} else {
+			results = data.filter((item, index) => {
 				let brand = item.brand.toLowerCase();
 				let model = item.model.toLowerCase();
 				let color = item.color.toLowerCase();
@@ -41,52 +44,27 @@ let data = require('../../store/data.json');
 				let { currentCategory, chips } = this.props.store;
 
 				if (value.length == 0) {
-					results.push(item);
+					return item;
 				}
 
-				item.categories.forEach((category) => {
-					if (category.indexOf(value) > -1) {
-						results.push(item);
-					}
-				});
-				
 				if (
 					brand.indexOf(value) > -1 ||
 					model.indexOf(value) > -1 ||
 					color.indexOf(value) > -1 ||
 					type.indexOf(value) > -1
-					) {
-					results.push(item);
+				) {
+					return item;
 				}
 
-				// if (isCategory) { // determine if search query might contain a category
-				// 	if (currentCategory == null) { return card; } // if no current category, just show card
-
-				// 	let activeChips = [];
-				// 	chips.forEach((chip, index) => {
-				// 		if (chip.active) { activeChips.push(chip.filter); }
-				// 	});
-
-				// 	if (activeChips.length == 0) { return card; }
-
-				// 	let activeFilters;
-				// 	activeChips.forEach((filter, index) => { // get all active chip filters and string them together
-				// 		if (index != 0) {
-				// 			activeFilters += " && " + filter;
-				// 		} else {
-				// 			activeFilters = filter;
-				// 		}
-				// 	});
-
-				// 	if (eval(activeFilters)) { // return any cards that come up as true
-				// 		return card;
-				// 	}
-
-				// // is there a better way to do this?
-				// } else 
+				for (let i = 0; i < item.categories.length; i++) {
+					if (item.categories[i].indexOf(value) > -1) {
+						return item;
+					}
+				}
+				console.log(this.props.store.results, results);
 			});
-
-		this.props.store.results = results;
+			this.props.store.results = results;
+		}
 
 	}
 

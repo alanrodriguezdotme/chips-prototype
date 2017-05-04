@@ -45,13 +45,12 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 					loader: 'ts-loader'
 				}]
 			},
-			{
-				test: /\.(css|scss)$/,
-				use: [
-					{ loader: "style-loader" },
-					{ loader: "css-loader" },
-					{ loader: "sass-loader" }
-				]
+			{ 
+				test: /\.scss$/, 
+				loader: ExtractTextPlugin.extract({
+					fallbackLoader: "style-loader",
+					loader: "css-loader!sass-loader",
+				}),
 			},
 			{
 				test: /\.jpg/,
