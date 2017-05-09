@@ -8,6 +8,7 @@
 	span {
 		display: flex;
 		flex-wrap: wrap;
+		width: 100%;
 	}
 
 	&.chips-showing {
@@ -23,6 +24,7 @@
 	text-align: center;
 	padding-top: 100px;
 	color: $gray;
+	margin: 0 auto;
 }
 
 

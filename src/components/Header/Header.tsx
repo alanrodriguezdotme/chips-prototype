@@ -12,7 +12,7 @@ let data = require('../../store/data.json');
 	}
 
 	checkCategory(value) {
-		let categories = [
+		let validCategories = [
 			"cars",
 			"automobiles",
 			"vehicles",
@@ -20,9 +20,20 @@ let data = require('../../store/data.json');
 			"shoes"
 		];
 
-		for (let i = 0; i < categories.length; i++) {
-			if (value.toLowerCase() == categories[i]) {
-				this.props.store.currentCategory = categories[i];
+		for (let i = 0; i < validCategories.length; i++) {
+			if (value.toLowerCase() == validCategories[i]) {
+				this.props.store.currentCategory = validCategories[i];
+				let updatedResults = this.props.store.results.filter((result) => {
+					let { categories } = result;
+
+					for (let i=0; i < categories.length; i++) {
+						if (categories[i] == validCategories) {
+							return result;
+						}
+					}
+				});
+
+				this.props.store.results = updatedResults;
 				break;
 			} else {
 				this.props.store.currentCategory = null;

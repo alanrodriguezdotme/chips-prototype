@@ -16,8 +16,48 @@ let data = require('../../store/data.json');
 		this.filterResults();
 	}
 
+	checkCategory(value) {
+		let validCategories = [
+			"cars",
+			"automobiles",
+			"vehicles",
+			"sneakers",
+			"shoes"
+		];
+
+		for (let i = 0; i < validCategories.length; i++) {
+			if (value.toLowerCase() == validCategories[i]) {
+				this.props.store.currentCategory = validCategories[i];
+				let updatedResults = this.props.store.results.filter((result) => {
+					let { categories } = result;
+
+					for (let i=0; i < categories.length; i++) {
+						if (categories[i] == validCategories) {
+							return result;
+						}
+					}
+				});
+
+				this.props.store.results = updatedResults;
+				break;
+			} else {
+				this.props.store.currentCategory = null;
+				this.props.store.activeChipsShowing = false;
+			}
+		}
+	}
+
 	filterResults() {
-		let { chips, results } = this.props.store;
+		let { chips, results, currentCategory } = this.props.store;
+		let categoryResults = data.filter((item) => {
+			let { categories } = item;
+
+			for (let i=0; i < categories.length; i++) {
+				if (categories[i] == currentCategory) {
+					return item;
+				}
+			}
+		});
 		let activeChips = [];
 		let activeFilters;
 		let filteredResults = [];
@@ -38,7 +78,7 @@ let data = require('../../store/data.json');
 				}
 			});
 			
-			data.forEach((item) => {
+			categoryResults.forEach((item) => {
 				if (eval(activeFilters)) {
 					filteredResults.push(item);
 				}
@@ -51,7 +91,12 @@ let data = require('../../store/data.json');
 			this.props.store.results = filteredResults;
 
 		} else {
-			this.props.store.results = data;
+			if (currentCategory == null) {
+				this.props.store.results = data;
+			} else {
+				this.props.store.results = categoryResults;
+			}
+
 			this.props.store.activeChipsShowing = false;
 		}
 	}
